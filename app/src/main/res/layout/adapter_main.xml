@@ -10,10 +10,20 @@
     <TextView
         android:id="@+id/text_nim"
         android:layout_width="0dp"
+        android:textColor="@color/white"
         android:layout_height="wrap_content"
         tools:text="Nanti kita cerita hari ini"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/icon_edit"/>
+    <TextView
+        android:id="@+id/text_nama"
+        android:layout_width="0dp"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content"
+        tools:text="Nanti kita cerita hari ini"
+        app:layout_constraintTop_toBottomOf="@+id/text_nim"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/icon_edit"/>
 

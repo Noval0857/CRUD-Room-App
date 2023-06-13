@@ -26,6 +26,7 @@ class NoteAdapter(private var notes: ArrayList<Note>, private val listener: OnAd
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
         val note = notes[position]
         holder.textNIM.text = note.NIM
+        holder.textNama.text = note.Nama
 
         holder.icEdit.setOnClickListener {
             listener.onUpdate(note)
@@ -42,6 +43,7 @@ class NoteAdapter(private var notes: ArrayList<Note>, private val listener: OnAd
 
     inner class NoteViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textNIM: TextView = view.findViewById(R.id.text_nim)
+        val textNama: TextView = view.findViewById(R.id.text_nama)
         val icEdit: ImageView = itemView.findViewById(R.id.icon_edit)
         val icDelete: ImageView = itemView.findViewById(R.id.icon_delete)
     }
