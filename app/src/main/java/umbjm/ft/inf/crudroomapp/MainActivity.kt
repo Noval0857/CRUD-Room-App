@@ -86,7 +86,7 @@ class MainActivity : AppCompatActivity() {
         val alertDialog = AlertDialog.Builder(this)
         alertDialog.apply {
             setTitle("Konfirmasi")
-            setMessage("Yakin Hapus ${note.title}?" )
+            setMessage("Yakin Hapus ${note.NIM}?" )
             setNegativeButton("Batal") { dialogInterface, i ->
                 dialogInterface.dismiss()
             }

@@ -49,7 +49,7 @@ class EditActivity : AppCompatActivity() {
         binding.buttonSave.setOnClickListener {
             CoroutineScope(Dispatchers.IO).launch {
                 db.noteDao().addNote(
-                    Note(0, binding.editTitle.text.toString(), binding.editNote.text.toString())
+                    Note(0, binding.editNim.text.toString(), binding.editNama.text.toString(),binding.editAlamat.text.toString(),binding.editHp.text.toString())
                 )
                 finish()
             }
@@ -58,7 +58,7 @@ class EditActivity : AppCompatActivity() {
         binding.buttonUpdate.setOnClickListener {
             CoroutineScope(Dispatchers.IO).launch {
                 db.noteDao().updateNote(
-                    Note(noteId, binding.editTitle.text.toString(), binding.editNote.text.toString())
+                    Note(noteId, binding.editNim.text.toString(), binding.editNama.text.toString(),binding.editAlamat.text.toString(),binding.editHp.text.toString())
                 )
                 finish()
             }
@@ -69,8 +69,10 @@ class EditActivity : AppCompatActivity() {
         noteId = intent.getIntExtra("intent_id", 0)
         CoroutineScope(Dispatchers.IO).launch {
             val notes = db.noteDao().getNote(noteId)[0]
-            binding.editTitle.setText(notes.title)
-            binding.editNote.setText(notes.note)
+            binding.editNim.setText(notes.NIM)
+            binding.editNama.setText(notes.Nama)
+            binding.editAlamat.setText(notes.Alamat_lengkap)
+            binding.editHp.setText(notes.No_hp)
         }
     }
 
